@@ -1,0 +1,48 @@
+Description - https://www.techtarget.com/searchnetworking/definition/File-Transfer-Protocol-FTP
+
+FTP (File Transfer Protocol) is a client-server protocol that relies on two communications channels between the client and server: a command channel for controlling 
+the conversation and a data channel for transmitting file content. FTP allows users to connect to a remote server, browse the files on that server, and transfer files 
+between the local and remote machines.
+
+FTP uses two channels to transfer data: a command channel and a data channel. The command channel is used for sending commands such as login credentials and file 
+transfer requests, while the data channel is used for transferring the actual file data.
+
+The control channel uses port 21 for communication, while the data channel can use either port 20 or a random port chosen by the server. When using active mode, 
+the server uses port 20 to establish a connection to the client on a random port, whereas when using passive mode, the client initiates the data channel connection 
+to the server on a random port. Passive mode is the default mode for most FTP clients, and is typically recommended for most use cases. However, in some situations, 
+such as when the client is behind a firewall that only allows outgoing connections on certain ports, active mode may be necessary.
+
+FTP clients are used to upload, download and manage files on a server. Some FTP clients:
+FileZilla -  free FTP client for Windows, macOS and Linux that supports FTP, FTPS and SFTP
+Transmit - FTP client for macOS that supports FTP and SSH
+WinSCP - Windows FTP client that supports FTP, SSH and SFTP
+WS_FTP -  Windows FTP client that supports SSH
+Linux and Windows OSs have built-in command line ftp client
+
+vsftpd
+proftpd
+
+FTP protocols:
+FTP
+SFTP
+FTPS
+TFTP
+
+Anonymous FTP.
+This is the most basic form of FTP. It provides support for data transfers without encrypting data or using a username and password. It's most commonly used for 
+download of material that is allowed for unrestricted distribution. It also works on port 21. When Anonymous FTP login is allowed, login with username anonymous. 
+The picture shows result of nmap -sC scan which detected that anonymous ftp login is allowed.
+
+Parrot OS	
+	
+Command	            Functionallity
+	
+ftp -h	            Displays the help information for the FTP client in the terminal
+ftp {ip_address}	  Connects to ftp server
+help	              Displays a list of available FTP commands that are available to interact with the remote server's file system
+dir	                Lists files and directories in the current directory in a long format
+ls	                Lists files and directories in the current directory in a short format
+ls -a	              Lists all files and directories in the current directory, including hidden files and directories
+ls -la	            Lists all files and directories in the current directory, including hidden files and directories  in a long format
+get {filename}     	Downloads a file from the remote FTP server to local machine
+
